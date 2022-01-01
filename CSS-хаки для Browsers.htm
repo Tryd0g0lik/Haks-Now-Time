@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head>
+
+
+<title>CSS-хаки</title>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="description" content="ie sucks, css hacks, css хаки">
+<meta name="keywords" content="IE sucks, css-hacks, css хаки, хаки">
+<link rel="stylesheet" type="text/css" href="collect.css">
+<link rel="alternate" type="application/rss+xml" title="Последние статьи" href="http://vremenno.net/rss/">
+<link rel="alternate" type="application/rss+xml" title="Популярные статьи" href="http://vremenno.net/rss/top-rated/">
+<link rel="shortcut icon" href="http://vremenno.net/favicon.ico" type="image/x-icon">
+
+</script>
+
+
+<a href="http://vremenno.net/rss/" id="rssFeed" title="RSS лента"><span><span>750</span></span></a>
+<div id="logo"><a href="http://vremenno.net/" title="На главную"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/logo.gif" alt="Временно.нет&nbsp;— статьи по верстке и веб-дизайну" width="255" height="56"></a></div>
+<table width="100%">
+<tbody><tr>
+<td class="header" colspan="2">
+</td>
+</tr>
+<tr>
+<td class="mainContent">
+    
+    <h1 class="articleTitleAlone">CSS-хаки</h1>
+   
+    
+	<div class="articleIntro">
+	<p><time pubdate
+>2021-12</time></p>
+<h2>Библия хаков</h2>
+<p><a href="http://browserhacks.com/"> Android / Chrome / Firefox /  Internet explorer/edge / Opera / Opera mini / Safari</a> </p>
+<p><a href="https://www.paulirish.com/2009/browser-specific-css-hacks/">Основан на большом списке CSS-хаков</a></p>
+<p><a href="http://www.thespanner.co.uk/2009/01/29/detecting-browsers-javascript-hacks/">Дополнительная информация 2</a></p>
+<p><a href="http://www.thespanner.co.uk/2009/01/29/detecting-browsers-javascript-hacks/">Обнаружение браузеров с помощью JS-хаков от Gareth Eyes и</a></p>
+<p><a href="https://gist.github.com/necolas/983116"> IE CSS хаки</a></p>
+<p><a href="https://github.com/4ae9b8/browserhacks">GitHub.</a></p>
+<p><a href="https://keithclark.co.uk/articles/moving-ie-specific-css-into-media-blocks/">Перемещение CSS, специфичного для IE, в медиаблоки</a></p>
+<p><a href="https://www.paulirish.com/2009/browser-specific-css-hacks/">Browser CSS Hacks</a></p>
+<p><a href="http://www.webdevout.net/css-hacks">CSS hacks</a></p>
+<h3>Крошечные хаков для обнаружения браузеров</h3>
+<p><a href="http://www.thespanner.co.uk/2009/01/29/detecting-browsers-javascript-hacks/">Читать ..</a></p>
+
+<h3>Темы на форумах</h3>
+
+<p><a href="https://stackoverflow.com/questions/18907131/detecting-ie11-using-css-capability-feature-detection">Обнаружение IE11 с использованием возможностей / функций CSS</a></p>
+<!-- <p><code></code></p> -->
+	<h3>Хак для IE 10</h3>
+		<p>
+			<code class="js-code language-css">@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+			   /* IE10+ specific styles go here */  
+			}
+			</code>
+		</p>
+
+		<p>/*------Specific style for IE11---------*/
+			<code class="js-code language-css">
+			 _:-ms-fullscreen, :root 
+			 .legend 
+			{ 
+			  line-height: 1.5em;
+			  position: relative;
+			  top: -1.1em;   
+			}
+			</code>
+		</p>
+	<h3>IE 6</h3>
+	<p><code class="js-code language-css">* html .ie6 {property:value;}</code></p>
+	<h3>IE 7</h3>
+	<p><code class="js-code language-css">*+html .ie7 {property:value;}</code></p>
+	<span> <strong>или </strong></span>
+	<p><code class="js-code language-css">*:first-child+html .ie7 {property:value;}</code></p>
+	<h3>IE 6 и 7</h3>
+	<p><code class="js-code language-css">@media screen\9 {
+    .ie67 {property:value;}
+}</code></p>
+<strong> или </strong>
+	<code class="js-code language-css">.ie67 { *property:value;}</code>
+	<strong> или </strong>
+	<code class="js-code language-css">.ie67 { #property:value;}</code>
+	<h3>IE 6, 7 и 8</h3>
+	<p><code class="js-code language-css">@media \0screen\,screen\9 {
+    .ie678 {property:value;}
+</code></p>
+	<h3>IE 8</h3>
+	<p><code class="js-code language-css">html>/**/body .ie8 {property:value;}</code></p><strong> или </strong> <code class="js-code language-css">@media \0screen {
+    .ie8 {property:value;}
+}</code>
+	<h3>Только в стандартном режиме IE 8</h3>
+	<p><code class="js-code language-css">.ie8 { property /*\**/: value\9 }</code></p>
+	<h3>IE 8,9 и 10</h3>
+	<p><code class="js-code language-css">@media screen\0 {
+    .ie8910 {property:value;}
+}</code></p>
+	<h3>Только IE 9</h3>
+	<p><code class="js-code language-css">@media screen and (min-width:0\0) and (min-resolution: .001dpcm) { 
+ // IE9 CSS
+ .ie9{property:value;}
+}</code></p>
+	<h3>IE 9 и выше</h3>
+	<p><code class="js-code language-css">@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+  // IE9+ CSS
+  .ie9up{property:value;}
+}</code></p>
+	<h3>IE 9 и 10</h3>
+	<p><code class="js-code language-css">@media screen and (min-width:0) {
+    .ie910{property:value;}
+}</code></p>
+	<h3>Только IE 10</h3>
+	<p><code class="js-code language-css">_:-ms-lang(x), .ie10 { property:value\9; }</code></p>
+	<h3>IE 10 и выше</h3>
+	<p>
+	<code class="js-code language-css">_:-ms-lang(x), .ie10up { property:value; }</code> <strong> или  </strong> <code class="js-code language-css">@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .ie10up{property:value;}
+}</code></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Использование </font></font><code class="js-code language-css">-ms-high-contrast</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">означает, что MS Edge не будет использоваться, </font></font><a href="https://msdn.microsoft.com/en-us/library/hh771830(v=vs.85).aspx" rel="noreferrer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">поскольку Edge не поддерживает</font></font><code class="js-code language-css">-ms-high-contrast</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""> .</font></font></p>
+	<h3>IE 11</h3>
+	<p><code class="js-code language-css">_:-ms-fullscreen, :root .ie11up { property:value; }</code></p>
+	<h3><a href="http://modernizr.com/" rel="noreferrer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Modernizr</font></font></a></h3>
+	<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Modernizr быстро запускается при загрузке страницы для обнаружения функций; </font><font style="vertical-align: inherit;" class="">затем он создает объект JavaScript с результатами и добавляет классы к элементу html</font></font></p>
+	
+	<h3><a href="http://rog.ie/blog/html5-boilerplate-addon" rel="noreferrer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выбор пользовательского агента</font></font></a></h3>
+	<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Javascript:</font></font></p>
+	<p><code class="js-code language-css">var b = document.documentElement;
+        b.setAttribute('data-useragent',  navigator.userAgent);
+        b.setAttribute('data-platform', navigator.platform );
+        b.className += ((!!('ontouchstart' in window) || !!('onmsgesturechange' in window))?' touch':'');</code>
+	</p>
+	
+	<p>Добавляет (например) следующее к <code class="js-code language-css">html</code> элементу:</p>
+	<p><code class="js-code language-css">data-useragent='Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C)'
+data-platform='Win32'</code></p>
+	<p>Допускаются очень ориентированные селекторы CSS, например:</p>
+	<p><code class="js-code language-css">html[data-useragent*='Chrome/13.0'] .nav{
+    background:url(img/radial_grad.png) center bottom no-repeat;
+}</code></p>
+
+<h2 >Android</h2>
+<h3> Selector Hacks</h3>
+<div class="hack">
+        
+        <p class="hack__label">WebKit</p>
+        
+            
+<pre class="hack__code  language-css"><code class="js-code language-css"><span class="line hack_f4ade0540d8e891e8190065f75acb186_0"><span class="token selector">.selector:not(*:root) </span><span class="token punctuation">{</span><span class="token punctuation">}</span></span></code></pre>
+            
+ 
+
+      </div>
+<!-- 	<p></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p>
+	<h3></h3>
+	<p><code></code></p> -->
+	
+	
+	
+	
+	
+	<h3>1. Box Model хак</h3><p>Box
+Model хак используется для того, чтобы справиться с глюком эксплорера,
+в котором border и padding включаются в ширину элемента</p><pre><code class="java">padding: <span class="number">4</span>em;
+border: <span class="number">1</span>em solid red;
+width: <span class="number">30</span>em;
+width<span class="javadoc">/**/:/**/</span> <span class="number">25</span>em; </code></p></pre><p>Посмотреть на <a href="http://tantek.com/CSS/Examples/boxmodelhack.html">примере</a>.</p><h3>2. Условные комментарии</h3><p>Условные
+комментарии работают только в IE под Windows, для других браузеров они
+являются обычными комментариями, поэтому их можно безболезненно
+использовать. Синтаксис такой:</p><pre><code class="css">&lt;!--<span class="attr_selector">[if условие]</span>&gt; <span class="keyword">HTML</span> &lt;!<span class="attr_selector">[endif]</span>--&gt;</code></p></pre><p>Если же вы хотите проигнорировать эксплорером какой-то кусок кода, то используйте такой комментарий:</p><pre><code class="css"> &lt;!--<span class="attr_selector">[if !condition]</span>&gt; <span class="keyword">HTML</span> &lt;!<span class="attr_selector">[endif]</span>--&gt;</code></p></pre><p>Условие может быть таким: IE – для любой версии IE <br>lt IE <span style="font-style: italic;">v</span> – (less than) для всех браузеров IE, версия которых меньше чем <span style="font-style: italic;">v</span><br>lte IE <span style="font-style: italic;">v</span> – (less than or equal) для всех браузеров IE, версия которых меньше чем <span style="font-style: italic;">v</span>, или такая же <br>gte IE <span style="font-style: italic;">v</span> – (greater than or equal) – для IE, версия которых больше или равна <span style="font-style: italic;">v</span><br>gt IE <span style="font-style: italic;">v</span> – (greater than) – для IE, версия которых больше <span style="font-style: italic;">v</span>.</p><p>Пример использования:</p><pre><p><code>&lt;!--[if lte IE 6]&gt; &lt;link rel="stylesheet" type="text/css" href="ie_sucks.css" /&gt; &lt;![endif]--&gt;</code></p></pre><h3>3. Min-width и max-width: максимальная и минимальная ширина блока</h3><p>IE, падла, не понимает эти свойства css. Хак для блока с id “wrapper” выглядит так:<br>А) Минимальная ширина 750px</p><pre><code class="css"><span class="id">#wrapper</span> <span class="rules">{
+<span class="rule"><span class="keyword">min-width</span>:<span class="value"> <span class="number">750</span>px</span>;</span>
+<span class="rule"><span class="keyword">width</span>:<span class="value"><span class="function">expression(<span class="params">document.body.clientWidth &lt; <span class="number">750</span>? <span class="string">"750px"</span>: <span class="string">"auto"</span> </span>)</span></span>;</span>}</span> </code></p></pre><p>Б) Максимальная ширина 1220px, минимальная 750px</p><pre><code class="css"><span class="id">#wrapper</span> <span class="rules">{
+<span class="rule"><span class="keyword">min-width</span>:<span class="value"> <span class="number">750</span>px</span>;</span>
+<span class="rule"><span class="keyword">max-width</span>:<span class="value"> <span class="number">1220</span>px</span>;</span>
+<span class="rule"><span class="keyword">width</span>:<span class="value"><span class="function">expression(<span class="params">document.body.clientWidth &lt; <span class="number">750</span>? <span class="string">"750px"</span> : document.body.clientWidth &gt; <span class="number">1220</span>? <span class="string">"1220px"</span> : <span class="string">"auto"</span></span>)</span></span>;</span>}</span> </code></p></pre><p><a href="http://www.dustindiaz.com/min-height-fast-hack/">Min-height хак от Дастина Диаза</a></p><pre><code class="css">elector <span class="rules">{
+<span class="rule"><span class="keyword">min-height</span>:<span class="value"><span class="number">500</span>px</span>;</span>
+<span class="rule"><span class="keyword">height</span>:<span class="value">auto !important</span>;</span>
+<span class="rule"><span class="keyword">height</span>:<span class="value"><span class="number">500</span>px</span>;</span>  }</span> </code></p></pre><h3>4. Простые селекторы</h3><p>Не
+обязательно создавать отдельные css-файлы для разных браузеров, если
+разница в рендеринге не так уж велика.Можно использовать следующие
+css-селекторы в вашем основном css-файле:</p><p>IE 6 и ниже<span class="code"> * html {}</span></p><p>IE 7 и ниже <span class="code">*:first-child+html {} * html {} </span></p><p>IE 7 только <span class="code">*:first-child+html {}</span></p><p>IE 7 и нормальные браузеры <span class="code">html&gt;body {}</span></p><p>Только нормальные браузеры (не IE 7) <span class="code">html&gt;/**/body {}</span></p><p>Опера версии 9 и ниже <span class="code">html:first-child {}</span></p><p>Пример использования: Пусть нам надо назначить для для селектора #news .title только в IE7 некоторые свойства. Делается это так:</p><pre><code class="css">*:first-child+<span class="keyword">html</span> <span class="id">#news</span> <span class="class">.title</span> <span class="rules">{
+    <span class="comment">/*необходимые свойства*/</span>
+}</span> </code></p></pre><h3>5. !important</h3><p>У
+IE версии 6 и меньше проблемы с идентификатором !important, который
+используется для того, чтобы объявление некоторого свойства было
+проигнорировано, даже если это объявление появляется позже текущего.
+Пример:</p><pre><code class="html"><span class="tag">&lt;<span class="keyword">style</span><span class="attribute"> type=<span class="value">"text/css"</span></span>&gt;</span><span class="css">
+<span class="keyword">p</span> <span class="rules">{
+    <span class="rule"><span class="keyword">background</span>:<span class="value"> green !important</span>;</span> <span class="comment">/* для нормальных браузеров и IE&gt;6 это свойстов остается, потому что оно помечено как important */</span>
+    <span class="rule"><span class="keyword">background</span>:<span class="value"> red</span>;</span> <span class="comment">/* IE 6 и ниже использует это свойство, срать ему на !important */</span>
+}</span>  </span><span class="tag">&lt;/<span class="keyword">style</span>&gt;</span></code></p></pre><p>&nbsp;</p><h3>6. @import “nonie.css” all;</h3><p>IE
+7 и ниже не поддерживает медиаселекторы @import. Поэтому можно написать
+css для нормальных браузеров и импортировать его в ваш css используя</p><pre><p><code>@import “nonie.css” all;</code></p></pre><p>Этот хак работает для IE версии 7 и ниже, может не работать в следующих версиях IE</p><p>&nbsp;</p><h3>7. body[class|="page-body"]</h3><pre><code class="html"><span class="tag">&lt;<span class="keyword">style</span><span class="attribute"> type=<span class="value">"text/css"</span></span>&gt;</span><span class="css">
+<span class="keyword">p</span> <span class="rules">{
+    <span class="rule"><span class="keyword">background</span>:<span class="value"> red</span>;</span> <span class="comment">/* Применимо ко всем браузерам */</span> 
+}</span>
+
+<span class="keyword">body</span><span class="attr_selector">[class|="page-body"]</span> <span class="keyword">p</span> <span class="rules">{
+    <span class="rule"><span class="keyword">background</span>:<span class="value"> green</span>;</span> <span class="comment">/* Применимо к IE7 и большинству нормальных браузеров, кроме Оперы */</span> 
+}</span>
+</span><span class="tag">&lt;/<span class="keyword">style</span>&gt;</span></code></p></pre><p>Все вышеназванные хаки используют валидный css. Следующие позволят вам быстро решить проблему, но сделают css не валидным. <span class="style1">НЕ советуется для использования. </span></p><h3>8. Подчеркивание и дефис</h3><p>Если
+перед свойством в css поставить подчеркивание “_”, или дефис “-“, то
+эти свойства будут восприниматься только IE версии 6 и ниже.</p><p>Пример использования:</p><pre><code class="html"><span class="tag">&lt;<span class="keyword">style</span><span class="attribute"> type=<span class="value">"text/css"</span></span>&gt;</span><span class="css">
+<span class="keyword">p</span> <span class="rules">{
+    <span class="rule"><span class="keyword">background</span>:<span class="value"> red</span>;</span> <span class="comment">/* Применимо ко всем браузерам */</span>
+    <span class="rule">_<span class="keyword">background</span>:<span class="value"> green</span>;</span> <span class="comment">/* Применимо к IE6 и ниже */</span>
+}</span>
+</span><span class="tag">&lt;/<span class="keyword">style</span>&gt;</span></code></p></pre><h3>9. Звездочка</h3><p>Работает для IE7 и ниже</p><pre><code class="html"><span class="tag">&lt;<span class="keyword">style</span><span class="attribute"> type=<span class="value">"text/css"</span></span>&gt;</span><span class="css">
+p {
+    background: red; /* Применимо ко всем браузерам */
+    *background: green; /* Применимо к IE6 и ниже */
+}
+</span><span class="tag">&lt;/<span class="keyword">style</span>&gt;</span></code></p></pre><p>Напомню, что этот хак использует невалидный css и является нерекомендуемым к использованию.</p><h3>10. body:empty</h3><p>Вообще
+говоря, :empty – это псевдо класс, который описан для CSS3, и который
+должен выбирать элементы, которые не имеют внутри других элементов или
+текста. Тем не менее, если использовать его для элемента body, Firefox
+1.5 и Firefox 2 всегда выбирают его, даже если внутри тэга боди есть
+содержимое.</p><p>Итак, этот хак скорее всего будет валидным в CSS3, но в настоящее время не является валидным для CSS2.x.</p><p>Резюмируем:</p><pre><p><code>body:empty{}</code></p></pre><p>выбирает тэг body в FF1.5 и FF2.0. Может быть не будет работать в следующих версиях.</p><h3>11. a:link:visited, a:visited:link</h3><p>В
+соответствии со стандартами, псевдотеги :link и :visited взаимно
+исключаемы, то есть :link означает непосещенную ссылку. Тем не менее,
+IE 7 и ниже проигнорируют эти псевдо-классы, если какой-нибудь другой
+появится ниже в том же селекторе.</p><p>Пример:</p><pre><code class="css"> <span class="keyword">a</span>:<span class="keyword">link</span>:visited, <span class="keyword">a</span>:visited:<span class="keyword">link</span> <span class="rules">{}</span></code></p></pre><p>выбирает элемент a в IE7 и ниже.</p><h3>12. &gt;body</h3><p><span class="code">&gt;body {}</span> выбирает элемент body только в IE7.</p><h3>13. html* {}</h3><p><span class="code">html* {} </span>выделяет все элементы внутри элемента html. Только для IE7 и ниже.</p><h3>14. !important!</h3><p>Как
+мы уже говорили, у эксплорера нелюбовь с идентификатором !important.
+Зато он понимает идинтификатор !important! (другие браузеры не
+воспринимают такое свойство). Работает для IE7 и ниже.</p><p>На этом обзор хаков закончен. Надеемся вам понравилось. О PNG и прозрачности будет написано в другой статье.</p></div>
+    <div class="articleFooter"><span class="tags"><em><a href="http://vremenno.net/tag/css+%F5%E0%EA%E8/" title="показать все статьи с этим тегом">css хаки</a></em>, <em><a href="http://vremenno.net/tag/%F5%E0%EA%E8/" title="показать все статьи с этим тегом">хаки</a></em> </span></div><div class="socialBookmarks"><a target="_blank" title="Добавить статью в memori.ru" href="http://memori.ru/link/?sm=1&amp;u_data%5Burl%5D=http://vremenno.net/html-css/css-hacks/&amp;u_data%5Bname%5D=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="Memori.ru" class="sb_memori" width="16" height="16"></a><a target="_blank" title="Добавить статью в mister-wong.com" href="http://www.mister-wong.com/index.php?action=addurl&amp;bm_url=http://vremenno.net/html-css/css-hacks/&amp;u_data%5Bname%5D=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="mister-wong.com" class="sb_mister_wong" width="16" height="16"></a><a target="_blank" title="Добавить статью в bobrdobr.ru" href="http://bobrdobr.ru/addext.html?url=http://vremenno.net/html-css/css-hacks/&amp;title=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="bobrdobr.ru" class="sb_bobrdobr" width="16" height="16"></a><a target="_blank" title="Добавить статью в moemesto.ru" href="http://moemesto.ru/post.php?url=http://vremenno.net/html-css/css-hacks/&amp;title=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="moemesto.ru" class="sb_moemesto" width="16" height="16"></a><a target="_blank" title="Добавить статью в del.icio.us" href="http://del.icio.us/post?url=http://vremenno.net/html-css/css-hacks/&amp;title=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="del.icio.us" class="sb_delicious" width="16" height="16"></a><a target="_blank" title="Добавить статью в zakladki.yandex.ru" href="http://zakladki.yandex.ru/userarea/links/addfromfav.asp?bAddLink_x=1&amp;lurl=http://vremenno.net/html-css/css-hacks/&amp;lname=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="zakladki.yandex.ru" class="sb_zakladki_yandex" width="16" height="16"></a><a target="_blank" title="Добавить статью в google.com/bookmarks/" href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://vremenno.net/html-css/css-hacks/&amp;title=CSS-%D1%85%D0%B0%D0%BA%D0%B8"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt="google.com/bookmarks/" class="sb_google_bookmarks" width="16" height="16"></a></div><div class="articleAuthorBlock" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=c9997ea68ba662d4b2c87b435ba9528e&amp;r=any&amp;size=40&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 0pt 6px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><div class="wrapper">
+	<h3>Автор статьи: Жека Белодед</h3>
+	<div>Понаписал <a href="http://vremenno.net/authors/desperado/">еще 17 статей</a>.</div>
+	</div></div><div class="relatedArticles"><h3>Похожие статьи</h3><ul class="relatedArts"><li><a href="http://vremenno.net/html-css/css-snippets/">Пятничные сниппеты. CSS</a>;</li><li><a href="http://vremenno.net/html-css/effective-css-advices-and-scripts/">Эффективный CSS — советы и скрипты</a>.</li></ul></div><a name="comments"></a><div class="subscribe2feed">
+		<h3>Понравилась статья?</h3>
+		<p>Тогда подпишись на <a href="http://vremenno.net/rss/">обновления через RSS</a> или воспользуйся<br><a href="" class="dashed" id="toggleAltSubs">другими способами подписки</a>.</p>
+		<div style="display: none;" class="alternateSubscriptions" id="alternateSubscriptions">
+			<div class="readInBtns">
+				<a href="http://lenta.yandex.ru/settings.xml?name=feed&amp;url=http://feeds.feedburner.com/vremenno"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/read-in-yl.gif" alt="Читать в Яндекс.Ленте" title="Читать в Яндекс.Ленте" width="100" height="22"></a>
+				<a href="http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/vremenno"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/read-in-google.gif" alt="Добавить в Google" title="Добавить в Google" width="100" height="22"></a>
+				<a href="http://www.netvibes.com/subscribe.php?url=http://feeds.feedburner.com/vremenno&amp;type=feed"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/read-in-nv.gif" alt="Добавить в Netvibes" title="Добавить в Netvibes" width="100" height="22"></a>
+			</div>
+			<div>
+				<form action="http://www.rss2email.ru/ready.asp" method="get">
+				<input name="rss" value="http://feeds.feedburner.com/vremenno" type="hidden">
+				<input name="link" value="" type="hidden">
+				<input name="logo" value="" type="hidden">
+				<div class="comment_form_title">Подписка по электронной почте</div> 
+				<div class="comment_form_input">
+					<input size="20" name="email" type="text">&nbsp;<input value=" Подписаться " type="submit">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div><div class="articleComments"><h3><a title="Комментарии к этой статье в RSS" href="http://vremenno.net/rss-comments-1210247930/"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/rss_16.gif" alt="RSS" width="16" height="16"></a> Комментарии</h3>
+    <div id="user_comments"><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1210451589"><a name="comment1210451589"></a><div class="comment_message">вообще пункт "Условные комментарии" намного полезнее всех остальных %)</div><div class="comment_user_details">skippi, <span class="commentDate">11 мая 2008, 0:33</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=c9997ea68ba662d4b2c87b435ba9528e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1210514475"><a name="comment1210514475"></a><div class="comment_message">Да,
+использовать условные комменты - самое красивое решение. Не надо
+портить хорошо написанный css, а в будущем ненужные условные комменты
+можно удалить.</div><div class="comment_user_details"><a href="http://beloded.net/">Жека</a>, <span class="commentDate">11 мая 2008, 18:01</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1218691167"><a name="comment1218691167"></a><div class="comment_message">Откровенно о наболевшем. Автор, молодец.
+Хотелось бы увидеть хак под Safari</div><div class="comment_user_details">Евгений, <span class="commentDate">14 августа 2008, 9:19</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1220524725"><a name="comment1220524725"></a><div class="comment_message">Еще к хакам с дефисами и др. символами можно добвить следующее:
+1. //width:100px; - так написаное свойство проигнорируют все браузеры кроме ie 7.0 и меньше
+2. _width:100px; - видят только ie 6.0 и меньше. ie7 не воспримет
+3. \\width:100px; - видят только ie 5.0 и ie 5.5</div><div class="comment_user_details">w-power.ru, <span class="commentDate">4 сентября 2008, 14:38</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1220837334"><a name="comment1220837334"></a><div class="comment_message">спасибо.</div><div class="comment_user_details"><a href="http://www.himuk.by.ru/">Александр-HIMиk</a>, <span class="commentDate">8 сентября 2008, 5:28</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1222418226"><a name="comment1222418226"></a><div class="comment_message">для ie 6 свойства max-width и min-width в зависимости от режима отображения страницы
+
+<p><code>
+width: expression(
+		(document.compatMode &amp;</code></p></div><div class="comment_user_details">kinder, <span class="commentDate">26 сентября 2008, 12:37</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1222418297"><a name="comment1222418297"></a><div class="comment_message">хе хе, а тег &lt;code</div><div class="comment_user_details">kinder, <span class="commentDate">26 сентября 2008, 12:38</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1222418379"><a name="comment1222418379"></a><div class="comment_message">млин... ничего не работает :(</div><div class="comment_user_details">kinder, <span class="commentDate">26 сентября 2008, 12:39</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1222426073"><a name="comment1222426073"></a><div class="comment_message">Автор не путайте людей в приамбеле. О чем пишем? 
+Вы видели стандарты на WEB? 
+Поделитесь ссылками ;)
+Есть рекомендации, а рекомендовать - не значит жениться...</div><div class="comment_user_details">PVasili, <span class="commentDate">26 сентября 2008, 14:47</span></div></div><div class="comments_item" style="background: transparent url(http://www.gravatar.com/avatar.php?gravatar_id=d41d8cd98f00b204e9800998ecf8427e&amp;r=any&amp;size=32&amp;default=http%3A%2F%2Fvremenno.net%2Ffiles%2Fimages%2Fuser.gif) no-repeat scroll 8px 8px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" id="comment_1228073857"><a name="comment1228073857"></a><div class="comment_message">4. Простые селекторы - еще как работает. Огоромное спасибо!!!!</div><div class="comment_user_details">Евгений, <span class="commentDate">30 ноября 2008, 22:37</span></div></div></div>
+    <div id="commentFormCont">
+        <noscript>Чтобы оставить комментарий, включите поддержку JavaScript в своем браузере.</noscript>
+        <script type="text/javascript">
+        document.write('<div id="default_comment_place"><form name="leave_comments" id="leave_comments" action="#" method="post" onsubmit="checkForm(this.id, \'user_comments\'); return false;"><input type="hidden" name="to_article" value="1210247930"/><div class="comment_form"><div class="comment_form_title"><strong>Имя</strong></div><div class="comment_form_field"><input type="hidden" id="reply_to" name="reply_to" value="0"/><input type="text" tabindex="1" alt="Имя" name="name" value="" id="CommentName"/></div><div id="extraFieldsOpen"><a href="" id="extrafields_btn" class="dashed">электронная почта и домашняя страница</a></div><div id="extrafields"><div class="comment_form_title">Эл. почта&nbsp;<span class="grayColor">(используется для <a href="http://gravatar.com/" target="_blank">Граватарки</a>)</span></div><div class="comment_form_field"><input type="text" tabindex="2" alt="Электропочта" id="CommentEmail" name="email" value=""/></div><div class="comment_form_title">Домашняя страница</div><div class="comment_form_field"><input type="text" tabindex="3" id="CommentUrl" name="url" value=""/></div></div><div class="comment_form_title"><strong>Текст сообщения</strong> <span class="grayColor">(можно использовать <span class="popupRight"><a href="/tags.html" class="dashed" title="список разрешенных тегов" onclick="popupWindow(this.href, \'Теги\', 300, 300, \'auto\'); return false;">некоторые теги</a></span>)</span></div><div class="comment_form_field"><textarea name="message" tabindex="4" fill="текст сообщения" id="messageTextarea" class="messageTextarea" cols="10" rows="5"></textarea></div><div class="comment_form_submit"><input type="submit" name="submit" tabindex="5" value="Оставить сообщение" class="submit_primary" id="submitComment"/><img src="/files/images/transparent.gif" width="16" height="16" alt=" " id="statusImg"/><span class="loading"><span id="loading"></span>&nbsp;</span></div></div></form></div>');
+        </script><div id="default_comment_place"><form name="leave_comments" id="leave_comments" action="#" method="post" onsubmit="checkForm(this.id, 'user_comments'); return false;"><input name="to_article" value="1210247930" type="hidden"><div class="comment_form"><div class="comment_form_title"><strong>Имя</strong></div><div class="comment_form_field"><input id="reply_to" name="reply_to" value="0" type="hidden"><input tabindex="1" alt="Имя" name="name" value="" id="CommentName" type="text"></div><div id="extraFieldsOpen"><a href="" id="extrafields_btn" class="dashed">электронная почта и домашняя страница</a></div><div style="display: none;" id="extrafields"><div class="comment_form_title">Эл. почта&nbsp;<span class="grayColor">(используется для <a href="http://gravatar.com/" target="_blank">Граватарки</a>)</span></div><div class="comment_form_field"><input tabindex="2" alt="Электропочта" id="CommentEmail" name="email" value="" type="text"></div><div class="comment_form_title">Домашняя страница</div><div class="comment_form_field"><input tabindex="3" id="CommentUrl" name="url" value="" type="text"></div></div><div class="comment_form_title"><strong>Текст сообщения</strong> <span class="grayColor">(можно использовать <span class="popupRight"><a href="http://vremenno.net/tags.html" class="dashed" title="список разрешенных тегов" onclick="popupWindow(this.href, 'Теги', 300, 300, 'auto'); return false;">некоторые теги</a></span>)</span></div><div class="comment_form_field"><textarea name="message" tabindex="4" fill="текст сообщения" id="messageTextarea" class="messageTextarea" cols="10" rows="5"></textarea></div><div class="comment_form_submit"><input name="submit" tabindex="5" value="Оставить сообщение" class="submit_primary" id="submitComment" type="submit"><img src="CSS-%D1%85%D0%B0%D0%BA%D0%B8_files/transparent.gif" alt=" " id="statusImg" width="16" height="16"><span class="loading"><span id="loading"></span>&nbsp;</span></div></div></form></div>
+    </div>
+    </div></td>
+<td class="sidePanel">
+    <div class="centerBg">
+        
+        
+    </div>
+</td>
+</tr>
+<tr>
+<td class="footer" colspan="2">
+    <table class="footerInfo">
+    <tbody><tr>
+    <td class="leftC">Творческий&nbsp;проект<br>cтудии&nbsp;«<a href="http://estetic-design.ru/">Эстетик&nbsp;дизайн</a>»</td>
+    <td class="rightC">©&nbsp;Временно.нет,&nbsp;2008<br><span><a href="http://vremenno.net/about/">О проекте</a></span>&nbsp;·&nbsp;<span><a href="http://vremenno.net/advertising/">Реклама на сайте</a></span>&nbsp;·&nbsp;<a href="mailto:pisem@vremenno.net">Письмо&nbsp;авторам</a></td>
+    </tr>
+    </tbody></table>
+</td>
+</tr>
+</tbody></table>
+</body></html>
